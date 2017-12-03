@@ -60,7 +60,7 @@ public class FileConverter {
 		// Set up the headline of both output files
 		StringBuilder firstLine = new StringBuilder();
 		firstLine.append("annee\t");
-		for (int i = 1; i < 90; i++) {
+		for (int i = 1; i <= 90; i++) {
 			firstLine.append("arg" + i + "\t");
 		}
 		fichierSortie.println(firstLine);
@@ -93,6 +93,9 @@ public class FileConverter {
 			String replacementChar = (String) iteratorNew.next();
 			newLine = newLine.replaceAll(initialChar, replacementChar);
 		}
+		// Set the year between quote
+		newLine = "\"" + newLine;
+		newLine = newLine.replaceFirst("\t", "\"\t");
 		return newLine;
 	}
 
