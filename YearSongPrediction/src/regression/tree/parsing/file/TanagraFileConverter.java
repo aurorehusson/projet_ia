@@ -78,7 +78,7 @@ public class TanagraFileConverter {
 				System.out.println("line originiale : ");
 				System.out.println(original);
 				
-				System.out.println("line modifiée : ");
+				System.out.println("line modifiï¿½e : ");
 				System.out.println(line);
 				
 			}
@@ -88,7 +88,7 @@ public class TanagraFileConverter {
 				fichierSortie2.println(line);
 			}
 			if (i%10000==0) {
-				System.out.println(i + " lignes traitées");
+				System.out.println(i + " lignes traitï¿½es");
 			}
 		} while ((line=br.readLine())!=null);
 		br.close();
@@ -96,7 +96,7 @@ public class TanagraFileConverter {
 		fichierSortie2.close();
 	}
 
-	private void writeHeader(PrintWriter fichierSortie, PrintWriter fichierSortie2) {
+	public void writeHeader(PrintWriter fichierSortie, PrintWriter fichierSortie2) {
 		StringBuilder firstLine = new StringBuilder();
 		firstLine.append("annee\t");
 		for (int i = 1; i <= 90; i++) {
@@ -106,7 +106,7 @@ public class TanagraFileConverter {
 		fichierSortie2.println(firstLine);
 	}
 
-	private String applyRegexOnLine(String line) {
+	public String applyRegexOnLine(String line) {
 		String newLine = line;
 		Iterator<String> iteratorNew = remplacementChar.iterator();
 		for (Iterator<String> iteratorOld = initialChar.iterator(); iteratorOld.hasNext();) {
