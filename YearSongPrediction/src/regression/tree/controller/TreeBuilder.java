@@ -1,5 +1,10 @@
 package regression.tree.controller;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import regression.tree.controller.exception.BuildException;
@@ -49,9 +54,11 @@ public class TreeBuilder {
 		return new NodeAnalyser(line);
 	}
 	
-	public static final RegressionTreeModel buildSpecificTree1() {
+	public static final RegressionTreeModel buildTanagraID3Tree() throws FileNotFoundException {
 		RegressionTreeModel tree = new RegressionTreeModel();
-		//Node root = new Node(new Rule(1, "<=", 12.5));
+		InputStream ips = new FileInputStream("treedata\\tanagra\\donnes_train_tanagra_ID3.txt");
+		InputStreamReader ipsr = new InputStreamReader(ips);
+		BufferedReader br = new BufferedReader(ipsr);
 		 
 		
 		

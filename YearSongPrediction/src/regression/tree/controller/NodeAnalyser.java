@@ -2,6 +2,7 @@ package regression.tree.controller;
 
 import regression.tree.controller.exception.InvalidParsingException;
 import regression.tree.model.Node;
+import regression.tree.model.label.Category;
 import regression.tree.model.label.ILabel;
 import regression.tree.model.label.Rule;
 
@@ -31,12 +32,16 @@ public class NodeAnalyser extends Node {
 		switch (split.length) {
 		
 			case 2:
-				
-				
+				if (!split[1].startsWith("annee = \"")) {
+					throw new InvalidParsingException(split[1] + " This String doesn't start with \"annee = \"\"");
+				}
+				String substring = split[1].substring(9, 13);
+				this.addChild(new Node(this, new Category(substring)));
+				//No break here because we want to execute case 1 when we execute case 2
 			case 1: 
 				String[] split2 = split[0].split(" ", 3);
 				if (!split2[0].startsWith("arg")) {
-					throw new InvalidParsingException("");
+					throw new InvalidParsingException(split2[0] + " This String doesn't start with \"arg\"");
 				}
 				// we free the 3 first characters "arg"
 				Integer argNumber = Integer.valueOf(split2[0].substring(3));
@@ -47,6 +52,7 @@ public class NodeAnalyser extends Node {
 				break;
 			default:
 				throw new InvalidParsingException("this line : " + this.line + " can't be parsed");
+				//throw >> break
 		}
 	}
 	
