@@ -1,4 +1,4 @@
-package parsing.file;
+package regression.tree.parsing.file;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,9 +10,14 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.FormatterClosedException;
 import java.util.Iterator;
-
-public class FileConverter {
+/**
+ * 
+ * @author jordan
+ *
+ */
+public class TanagraFileConverter {
 	private String fileNameToConvert;
 	private String convertedFileName;
 	private Collection<String> initialChar;
@@ -35,7 +40,7 @@ public class FileConverter {
 	 * @param remplacementChar
 	 *            char Replacement collection
 	 */
-	public FileConverter(String fileNameToConvert, String convertedFileName, Collection<String> initialChar,
+	public TanagraFileConverter(String fileNameToConvert, String convertedFileName, Collection<String> initialChar,
 			Collection<String> remplacementChar) {
 		this.setFileNameToConvert(fileNameToConvert);
 		this.setConvertedFileName(convertedFileName);
@@ -58,19 +63,25 @@ public class FileConverter {
 		BufferedWriter bw2 = new BufferedWriter(fw2);
 		PrintWriter fichierSortie2 = new PrintWriter(bw2);
 		// Set up the headline of both output files
-		StringBuilder firstLine = new StringBuilder();
-		firstLine.append("annee\t");
-		for (int i = 1; i <= 90; i++) {
-			firstLine.append("arg" + i + "\t");
-		}
-		fichierSortie.println(firstLine);
-		fichierSortie2.println(firstLine);	
+		writeHeader(fichierSortie, fichierSortie2);	
 		// Strat reading the file
 		String line = br.readLine();
 		int i = 1;
 		do {
-			line = applyRegexOnLine(line);
 			i++;
+			String original = line;
+			try {
+				
+				line = applyRegexOnLine(line);
+			} catch (FormatterClosedException e) {
+				System.out.println("Error line " + i);
+				System.out.println("line originiale : ");
+				System.out.println(original);
+				
+				System.out.println("line modifiée : ");
+				System.out.println(line);
+				
+			}
 			if (i <463715) { // we sort the lines of training and the lines of tests
 				fichierSortie.println(line);
 			}else {
@@ -85,6 +96,16 @@ public class FileConverter {
 		fichierSortie2.close();
 	}
 
+	private void writeHeader(PrintWriter fichierSortie, PrintWriter fichierSortie2) {
+		StringBuilder firstLine = new StringBuilder();
+		firstLine.append("annee\t");
+		for (int i = 1; i <= 90; i++) {
+			firstLine.append("arg" + i + "\t");
+		}
+		fichierSortie.println(firstLine);
+		fichierSortie2.println(firstLine);
+	}
+
 	private String applyRegexOnLine(String line) {
 		String newLine = line;
 		Iterator<String> iteratorNew = remplacementChar.iterator();
@@ -96,6 +117,9 @@ public class FileConverter {
 		// Set the year between quote
 		newLine = "\"" + newLine;
 		newLine = newLine.replaceFirst("\t", "\"\t");
+		if (newLine.split("\t").length != 91) {
+			throw new FormatterClosedException();
+		}
 		return newLine;
 	}
 
@@ -129,6 +153,10 @@ public class FileConverter {
 		this.convertedFileName = convertedFileName;
 	}
 	
+	/*
+	 * Lauch build of file, so it can be read in Tanagra
+	 * 
+	 */
 	public static void main(String[] args) {
 		Collection<String> oldChars = new ArrayList<>();
 		oldChars.add(",");
@@ -137,7 +165,7 @@ public class FileConverter {
 		newChars.add('\t'+"");
 		newChars.add(",");
 		
-		FileConverter fileConverteur = new FileConverter("YearPredictionMSD.txt", "YearPredictionMSDNew",oldChars,newChars);
+		TanagraFileConverter fileConverteur = new TanagraFileConverter("YearPredictionMSD.txt", "YearPredictionMSDNew",oldChars,newChars);
 		try {
 			fileConverteur.executeRewriting();
 		} catch (IOException e) {
