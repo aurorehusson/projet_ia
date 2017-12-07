@@ -1,11 +1,8 @@
 package regression.space;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 import org.apache.commons.lang3.ArrayUtils;
-import org.apache.commons.math3.ml.distance.*;
 
 public class Main {
 	
@@ -55,7 +52,6 @@ public class Main {
 		System.out.println("");
 		System.out.println("------------------------");
 	}
-	float rapport = new Float(nombreJuste)/new Float(dataTest.size());
 	System.out.println("Bonnes réponses : " + nombreJuste/dataTest.size());
 	}
 	

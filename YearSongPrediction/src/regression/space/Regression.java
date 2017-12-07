@@ -1,15 +1,13 @@
 package regression.space;
 
 import java.io.FileWriter;
-import java.lang.Math;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Vector;
 
-import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 import org.apache.commons.lang3.ArrayUtils;
-import data.*;
-import com.*;
+import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
+
+import data.DataSorting;
 
 public class Regression {
 	
@@ -33,7 +31,6 @@ public class Regression {
 		try {
 			fw = new FileWriter("Results.txt", false);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 	
 	}
@@ -42,7 +39,6 @@ public class Regression {
 			fw.write(str+"\n");
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -54,7 +50,7 @@ public class Regression {
 		for(i=0; i<dataTrain.size();i++){
 			
 			OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
-			int nombrePoints = dataTrain.get(0).length;
+			//int nombrePoints = dataTrain.get(0).length;
 			
 			Double[][] elements;			
 			elements = dataTrain.get(i);
@@ -116,7 +112,6 @@ public class Regression {
 		try {
 			fw.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	} 

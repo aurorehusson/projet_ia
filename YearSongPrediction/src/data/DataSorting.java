@@ -2,8 +2,6 @@ package data;
 
 import java.util.ArrayList;
 
-import org.omg.CORBA.DoubleSeqHelper;
-
 public class DataSorting {
 
 	//public ArrayList<ArrayList<ArrayList<Double>>> dataTrainSort;
