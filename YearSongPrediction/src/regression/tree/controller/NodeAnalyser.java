@@ -5,21 +5,38 @@ import regression.tree.model.Node;
 import regression.tree.model.label.Category;
 import regression.tree.model.label.ILabel;
 import regression.tree.model.label.Rule;
-
+/**
+ * 
+ * @author jordan
+ *
+ */
 public class NodeAnalyser extends Node {
 
 	private String line;
 	private int lastIndexOf;
 	
+	/**
+	 * 
+	 * @param category
+	 */
 	public NodeAnalyser(ILabel category) {
 		super(category);
 	}
-	
+	/**
+	 * 
+	 * @param line
+	 * @throws InvalidParsingException
+	 */
 	public NodeAnalyser(String line) throws InvalidParsingException {
 		super(null);
 		this.line = line;
 		analyseString();
 	}
+	
+	/**
+	 * 
+	 * @throws InvalidParsingException
+	 */
 
 	private void analyseString() throws InvalidParsingException {
 		String newLine;
@@ -52,7 +69,9 @@ public class NodeAnalyser extends Node {
 				//throw >> break
 		}
 	}
-	
+	/**
+	 * @return the deepth of a node, supposing the number of '\t'
+	 */
 	public int getDeepth() {
 		lastIndexOf = line.lastIndexOf("\t");
 		return (lastIndexOf == -1) ? 0 : lastIndexOf + 1;

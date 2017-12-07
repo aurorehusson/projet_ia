@@ -1,4 +1,4 @@
-package regression.tree.parsing.file;
+package regression.tree.parsing.file.converter;
 /**
  * Exception used to signal a format problem in a string
  * 

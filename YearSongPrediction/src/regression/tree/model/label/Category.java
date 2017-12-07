@@ -5,7 +5,7 @@ public class Category implements ILabel {
 	private String category;
 	
 	public Category(String category) {
-		this.setCategory(category);
+		this.category = category;
 	}
 	
 	@Override

@@ -11,7 +11,7 @@ import regression.tree.controller.exception.BuildException;
 import regression.tree.controller.exception.InvalidParsingException;
 import regression.tree.model.Node;
 import regression.tree.model.RegressionTreeModel;
-import regression.tree.model.label.Category;
+import regression.tree.model.label.RootCategory;
 
 public class TreeBuilder {
 	
@@ -37,7 +37,7 @@ public class TreeBuilder {
 		ArrayList<Node> lastNodeUsedAtDeepN = new ArrayList<>();
 		
 		//NodeAnalyser root = stringToNodeAnalyser(lines[0]);
-		Node root = new Node(new Category("ROOT"));
+		Node root = new Node(new RootCategory());
 		lastNodeUsedAtDeepN.add(0, root);
 		regressionTreeModel.setRoot(root);
 		
@@ -56,8 +56,22 @@ public class TreeBuilder {
 		return new NodeAnalyser(line);
 	}
 	
-	public static final RegressionTreeModel buildTanagraID3Tree() throws FileNotFoundException, BuildException, InvalidParsingException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/tanagra/donnees_train_tanagra_ID3.txt")));
+	public static final RegressionTreeModel buildTanagraID3TreeDepth10() throws FileNotFoundException, BuildException, InvalidParsingException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/tanagra/donnees_train_tanagra_ID3_depth10.txt")));
+		StringBuilder fileContains = new StringBuilder();
+		String line = "";
+		try {
+			while ((line = br.readLine())!=null) {
+				fileContains.append(line + System.lineSeparator());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return buildTreeFromString(fileContains.toString());
+	}
+	
+	public static final RegressionTreeModel buildTanagraID3TreeDepth15() throws FileNotFoundException, BuildException, InvalidParsingException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/tanagra/donnees_train_tanagra_ID3_depth15.txt")));
 		StringBuilder fileContains = new StringBuilder();
 		String line = "";
 		try {

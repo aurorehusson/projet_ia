@@ -70,6 +70,20 @@ public class Node {
 		this.child.add(child);
 	}
 	
+	/**
+	 * 
+	 * 
+	 * @return
+	 */
+	public Collection<Node> getChild() {
+		return child;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	
 	public int getDeepth() {
 		return parent==null ? 0 : parent.getDeepth() + 1;
 	}

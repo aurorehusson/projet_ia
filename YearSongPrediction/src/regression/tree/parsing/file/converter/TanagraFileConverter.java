@@ -1,4 +1,4 @@
-package regression.tree.parsing.file;
+package regression.tree.parsing.file.converter;
 
 import java.io.IOException;
 import java.io.PrintWriter;
