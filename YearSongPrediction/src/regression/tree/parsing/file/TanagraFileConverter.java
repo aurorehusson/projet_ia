@@ -1,99 +1,25 @@
 package regression.tree.parsing.file;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.FormatterClosedException;
 import java.util.Iterator;
 /**
  * 
  * @author jordan
  *
  */
-public class TanagraFileConverter {
-	private String fileNameToConvert;
-	private String convertedFileName;
+public class TanagraFileConverter extends FileConverter implements IFileConverter {
+	
 	private Collection<String> initialChar;
 	private Collection<String> remplacementChar;
 
-	/**
-	 * Java class defining the source file that will be converted into the
-	 * destination file It defines too the initial char that will be converted into
-	 * the new char Throw an exception if both collection of char don't have the
-	 * same size
-	 * 
-	 * Order in the changes matters
-	 * 
-	 * @param fileNameToConvert
-	 *            source
-	 * @param convertedFileName
-	 *            destination file
-	 * @param initialChar
-	 *            collection of char to convert
-	 * @param remplacementChar
-	 *            char Replacement collection
-	 */
 	public TanagraFileConverter(String fileNameToConvert, String convertedFileName, Collection<String> initialChar,
 			Collection<String> remplacementChar) {
-		this.setFileNameToConvert(fileNameToConvert);
-		this.setConvertedFileName(convertedFileName);
-		this.initialChar = initialChar;
-		this.remplacementChar = remplacementChar;
-	}
-
-	public void executeRewriting() throws IOException {
-		// Open the file to convert
-		InputStream ips;
-		ips = new FileInputStream(getFileNameToConvert());
-		InputStreamReader ipsr = new InputStreamReader(ips);
-		BufferedReader br = new BufferedReader(ipsr);
-		// Open the converted file to write in
-		FileWriter fw = new FileWriter(getConvertedFileName() + "_train");
-		BufferedWriter bw = new BufferedWriter(fw);
-		PrintWriter fichierSortie = new PrintWriter(bw);
-		// the second file were we store the others line over 463715
-		FileWriter fw2 = new FileWriter(getConvertedFileName() + "_test");
-		BufferedWriter bw2 = new BufferedWriter(fw2);
-		PrintWriter fichierSortie2 = new PrintWriter(bw2);
-		// Set up the headline of both output files
-		writeHeader(fichierSortie, fichierSortie2);	
-		// Strat reading the file
-		String line = br.readLine();
-		int i = 1;
-		do {
-			i++;
-			String original = line;
-			try {
-				
-				line = applyRegexOnLine(line);
-			} catch (FormatterClosedException e) {
-				System.out.println("Error line " + i);
-				System.out.println("line originiale : ");
-				System.out.println(original);
-				
-				System.out.println("line modifi�e : ");
-				System.out.println(line);
-				
-			}
-			if (i <463715) { // we sort the lines of training and the lines of tests
-				fichierSortie.println(line);
-			}else {
-				fichierSortie2.println(line);
-			}
-			if (i%10000==0) {
-				System.out.println(i + " lignes trait�es");
-			}
-		} while ((line=br.readLine())!=null);
-		br.close();
-		fichierSortie.close();
-		fichierSortie2.close();
+		super(fileNameToConvert, convertedFileName);
+		this.setInitialChar(initialChar);
+		this.setRemplacementChar(remplacementChar);
 	}
 
 	public void writeHeader(PrintWriter fichierSortie, PrintWriter fichierSortie2) {
@@ -106,10 +32,10 @@ public class TanagraFileConverter {
 		fichierSortie2.println(firstLine);
 	}
 
-	public String applyRegexOnLine(String line) {
+	public String applyRegexOnLine(String line) throws FormatException {
 		String newLine = line;
-		Iterator<String> iteratorNew = remplacementChar.iterator();
-		for (Iterator<String> iteratorOld = initialChar.iterator(); iteratorOld.hasNext();) {
+		Iterator<String> iteratorNew = getRemplacementChar().iterator();
+		for (Iterator<String> iteratorOld = getInitialChar().iterator(); iteratorOld.hasNext();) {
 			String initialChar = (String) iteratorOld.next();
 			String replacementChar = (String) iteratorNew.next();
 			newLine = newLine.replaceAll(initialChar, replacementChar);
@@ -118,39 +44,37 @@ public class TanagraFileConverter {
 		newLine = "\"" + newLine;
 		newLine = newLine.replaceFirst("\t", "\"\t");
 		if (newLine.split("\t").length != 91) {
-			throw new FormatterClosedException();
+			throw new FormatException();
 		}
 		return newLine;
 	}
-
+	
 	/**
-	 * @return the fileNameToConvert
+	 * @return the remplacementChar
 	 */
-	public String getFileNameToConvert() {
-		return fileNameToConvert;
+	private Collection<String> getRemplacementChar() {
+		return remplacementChar;
 	}
 
 	/**
-	 * @param fileNameToConvert
-	 *            the fileNameToConvert to set
+	 * @param remplacementChar the remplacementChar to set
 	 */
-	private void setFileNameToConvert(String fileNameToConvert) {
-		this.fileNameToConvert = fileNameToConvert;
+	private void setRemplacementChar(Collection<String> remplacementChar) {
+		this.remplacementChar = remplacementChar;
 	}
 
 	/**
-	 * @return the convertedFileName
+	 * @return the initialChar
 	 */
-	public String getConvertedFileName() {
-		return convertedFileName;
+	private Collection<String> getInitialChar() {
+		return initialChar;
 	}
 
 	/**
-	 * @param convertedFileName
-	 *            the convertedFileName to set
+	 * @param initialChar the initialChar to set
 	 */
-	private void setConvertedFileName(String convertedFileName) {
-		this.convertedFileName = convertedFileName;
+	private void setInitialChar(Collection<String> initialChar) {
+		this.initialChar = initialChar;
 	}
 	
 	/*
@@ -171,7 +95,5 @@ public class TanagraFileConverter {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 }

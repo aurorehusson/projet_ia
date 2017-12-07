@@ -23,11 +23,8 @@ public class NodeAnalyser extends Node {
 
 	private void analyseString() throws InvalidParsingException {
 		String newLine;
-		if (getDeepth()==-1) {
-			newLine = line;
-		} else {
-			newLine = line.substring(getDeepth()-1);
-		}
+		newLine = line.substring(getDeepth());
+		
 		String[] split = newLine.split(" then ");
 		switch (split.length) {
 		
@@ -41,12 +38,12 @@ public class NodeAnalyser extends Node {
 			case 1: 
 				String[] split2 = split[0].split(" ", 3);
 				if (!split2[0].startsWith("arg")) {
-					throw new InvalidParsingException(split2[0] + " This String doesn't start with \"arg\"");
+					throw new InvalidParsingException("\"" + split2[0] + "\"" + " This String doesn't start with \"arg\"");
 				}
 				// we free the 3 first characters "arg"
 				Integer argNumber = Integer.valueOf(split2[0].substring(3));
-				String compareSign = split[1];
-				String parsableDouble = split[2].replace(",", ".");
+				String compareSign = split2[1];
+				String parsableDouble = split2[2].replace(",", ".");
 				Double value = Double.valueOf(parsableDouble);
 				setLabel(new Rule(argNumber,compareSign,value));
 				break;
@@ -58,7 +55,7 @@ public class NodeAnalyser extends Node {
 	
 	public int getDeepth() {
 		lastIndexOf = line.lastIndexOf("\t");
-		return (lastIndexOf == -1) ? 0 : lastIndexOf;
+		return (lastIndexOf == -1) ? 0 : lastIndexOf + 1;
 	} 
 	
 }

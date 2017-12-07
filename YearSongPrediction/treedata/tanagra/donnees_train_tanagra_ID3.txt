@@ -1,214 +1,212 @@
-Decision tree
-
-arg1 < 45,7646
-	arg14 < 2251,2939
-		arg2 < 8,2722
-			arg3 < 15,1492
-				arg1 < 41,9633
-					arg2 < -21,2608 then annee = "2007" (5,98 % of 13991 examples)
-					arg2 >= -21,2608
-						arg3 < -13,8086
-							arg1 < 38,7360
-								arg73 < 38,5173 then annee = "1995" (6,37 % of 863 examples)
-								arg73 >= 38,5173 then annee = "1994" (6,66 % of 631 examples)
-							arg1 >= 38,7360
-								arg3 < -30,3840 then annee = "2003" (6,96 % of 877 examples)
-								arg3 >= -30,3840 then annee = "1994" (7,15 % of 979 examples)
-						arg3 >= -13,8086
-							arg1 < 39,1476
-								arg58 < 149,8707 then annee = "1992" (5,99 % of 1470 examples)
-								arg58 >= 149,8707 then annee = "1991" (5,80 % of 276 examples)
-							arg1 >= 39,1476
-								arg41 < -25,8479 then annee = "2007" (6,09 % of 673 examples)
-								arg41 >= -25,8479 then annee = "1994" (6,16 % of 1819 examples)
-				arg1 >= 41,9633 then annee = "2005" (7,94 % of 16643 examples)
-			arg3 >= 15,1492
-				arg2 < -56,0967
-					arg6 < -7,0235
-						arg1 < 36,1818
-							arg6 < -16,2736
-								arg15 < 1570,8312 then annee = "2004" (6,78 % of 428 examples)
-								arg15 >= 1570,8312 then annee = "2004" (8,55 % of 456 examples)
-							arg6 >= -16,2736
-								arg58 < 114,0092 then annee = "1997" (6,07 % of 412 examples)
-								arg58 >= 114,0092 then annee = "2001" (7,93 % of 290 examples)
-						arg1 >= 36,1818
-							arg13 < 30,7554
-								arg1 < 42,2382 then annee = "2008" (7,02 % of 841 examples)
-								arg1 >= 42,2382 then annee = "2004" (10,57 % of 492 examples)
-							arg13 >= 30,7554
-								arg39 < -136,3003 then annee = "2007" (8,81 % of 193 examples)
-								arg39 >= -136,3003 then annee = "2005" (10,96 % of 584 examples)
-					arg6 >= -7,0235
-						arg73 < -119,1107
-							arg88 < -3,8773
-								arg25 < -26,7942 then annee = "1991" (14,01 % of 414 examples)
-								arg25 >= -26,7942 then annee = "1994" (8,78 % of 296 examples)
-							arg88 >= -3,8773
-								arg6 < 9,9134 then annee = "1999" (5,14 % of 798 examples)
-								arg6 >= 9,9134 then annee = "1994" (7,87 % of 1054 examples)
-						arg73 >= -119,1107
-							arg13 < 17,9415
-								arg4 < 21,4417 then annee = "1993" (6,01 % of 715 examples)
-								arg4 >= 21,4417 then annee = "1987" (11,11 % of 324 examples)
-							arg13 >= 17,9415
-								arg39 < -90,4188 then annee = "2006" (4,86 % of 865 examples)
-								arg39 >= -90,4188 then annee = "1996" (5,68 % of 528 examples)
-				arg2 >= -56,0967
-					arg1 < 42,9984
-						arg7 < -13,5922
-							arg6 < 9,9318
-								arg6 < -7,5614 then annee = "2004" (5,43 % of 939 examples)
-								arg6 >= -7,5614 then annee = "1994" (3,87 % of 1602 examples)
-							arg6 >= 9,9318
-								arg2 < -22,1934 then annee = "1994" (9,39 % of 511 examples)
-								arg2 >= -22,1934 then annee = "1994" (7,47 % of 348 examples)
-						arg7 >= -13,5922
-							arg6 < -13,9275
-								arg2 < -15,9415 then annee = "2006" (5,85 % of 991 examples)
-								arg2 >= -15,9415 then annee = "1993" (5,63 % of 800 examples)
-							arg6 >= -13,9275
-								arg11 < -3,0378 then annee = "2005" (3,71 % of 1804 examples)
-								arg11 >= -3,0378 then annee = "1995" (3,82 % of 5210 examples)
-					arg1 >= 42,9984
-						arg57 < 1,2049
-							arg13 < 44,4267
-								arg24 < 174,9142 then annee = "2007" (7,41 % of 432 examples)
-								arg24 >= 174,9142 then annee = "2005" (7,10 % of 1704 examples)
-							arg13 >= 44,4267
-								arg84 < -0,9807 then annee = "2007" (10,00 % of 150 examples)
-								arg84 >= -0,9807 then annee = "2007" (10,24 % of 381 examples)
-						arg57 >= 1,2049
-							arg3 < 30,3995
-								arg2 < -9,6916 then annee = "2006" (6,88 % of 1468 examples)
-								arg2 >= -9,6916 then annee = "2005" (4,59 % of 1219 examples)
-							arg3 >= 30,3995
-								arg27 < 10,2168 then annee = "1995" (4,36 % of 1948 examples)
-								arg27 >= 10,2168 then annee = "2007" (5,66 % of 1431 examples)
-		arg2 >= 8,2722
-			arg20 < 515,0552
-				arg3 < 5,2399
-					arg1 < 42,6754
-						arg68 < 67,0230
-							arg71 < -46,0447
-								arg50 < 0,1242 then annee = "1994" (9,03 % of 432 examples)
-								arg50 >= 0,1242 then annee = "1991" (5,99 % of 668 examples)
-							arg71 >= -46,0447
-								arg67 < 4,1585 then annee = "1992" (8,60 % of 2035 examples)
-								arg67 >= 4,1585 then annee = "1991" (5,51 % of 1598 examples)
-						arg68 >= 67,0230
-							arg3 < -30,9072
-								arg58 < 7,9216 then annee = "1995" (10,34 % of 261 examples)
-								arg58 >= 7,9216 then annee = "1993" (8,26 % of 242 examples)
-							arg3 >= -30,9072
-								arg28 < -44,7302 then annee = "1988" (10,28 % of 846 examples)
-								arg28 >= -44,7302 then annee = "1991" (7,78 % of 720 examples)
-					arg1 >= 42,6754
-						arg2 < 39,8608
-							arg3 < -15,4552
-								arg4 < 12,4532 then annee = "2002" (6,10 % of 1344 examples)
-								arg4 >= 12,4532 then annee = "2009" (13,95 % of 172 examples)
-							arg3 >= -15,4552
-								arg79 < -30,8833 then annee = "1995" (6,42 % of 1448 examples)
-								arg79 >= -30,8833 then annee = "1994" (7,15 % of 1399 examples)
-						arg2 >= 39,8608
-							arg14 < 1114,8948
-								arg7 < 3,4561 then annee = "1992" (8,25 % of 957 examples)
-								arg7 >= 3,4561 then annee = "1993" (9,20 % of 337 examples)
-							arg14 >= 1114,8948
-								arg40 < -76,0213 then annee = "1997" (6,34 % of 631 examples)
-								arg40 >= -76,0213 then annee = "1994" (6,92 % of 1488 examples)
-				arg3 >= 5,2399
-					arg6 < -11,5875
-						arg27 < 178,8050
-							arg20 < 349,7025
-								arg8 < 3,3784 then annee = "1989" (8,58 % of 4989 examples)
-								arg8 >= 3,3784 then annee = "1991" (5,77 % of 1074 examples)
-							arg20 >= 349,7025
-								arg57 < -106,1064 then annee = "2009" (6,67 % of 210 examples)
-								arg57 >= -106,1064 then annee = "1991" (6,52 % of 1627 examples)
-						arg27 >= 178,8050
-							arg38 < 323,9733
-								arg3 < 24,1856 then annee = "1992" (7,55 % of 609 examples)
-								arg3 >= 24.1856 then annee = "1989" (5.02 % of 816 examples)
-							arg38 >= 323,9733
-								arg72 < -86,5690 then annee = "2007" (8,28 % of 314 examples)
-								arg72 >= -86,5690 then annee = "2005" (5,33 % of 563 examples)
-					arg6 >= -11,5875
-						arg11 < -1,4864
-							arg29 < 39,0344
-								arg73 < -31,7095 then annee = "1995" (4,17 % of 1749 examples)
-								arg73 >= -31,7095 then annee = "1989" (4,51 % of 1175 examples)
-							arg29 >= 39,0344
-								arg28 < 52,7130 then annee = "1991" (4,88 % of 1290 examples)
-								arg28 >= 52,7130 then annee = "1994" (5,97 % of 620 examples)
-						arg11 >= -1,4864
-							arg28 < -54,3374
-								arg73 < 20,7136 then annee = "1989" (4,43 % of 2030 examples)
-								arg73 >= 20,7136 then annee = "1987" (8,30 % of 1132 examples)
-							arg28 >= -54,3374
-								arg19 < 579,9233 then annee = "1991" (5,43 % of 3132 examples)
-								arg19 >= 579,9233 then annee = "1994" (6,38 % of 1629 examples)
-			arg20 >= 515,0552
-				arg1 < 42,9750
-					arg28 < -67,2090
-						arg3 < -12,6639
-							arg1 < 39,5892
-								arg46 < 11,2506 then annee = "1989" (8,61 % of 302 examples)
-								arg46 >= 11,2506 then annee = "1996" (6,81 % of 323 examples)
-							arg1 >= 39,5892
-								arg14 < 1746,2938 then annee = "2000" (6,25 % of 336 examples)
-								arg14 >= 1746,2938 then annee = "2005" (7,14 % of 504 examples)
-						arg3 >= -12,6639
-							arg71 < 23,5112
-								arg58 < -29,6617 then annee = "1998" (5,17 % of 232 examples)
-								arg58 >= -29,6617 then annee = "2003" (5,90 % of 458 examples)
-							arg71 >= 23,5112
-								arg67 < -81,3170 then annee = "1988" (10,40 % of 202 examples)
-								arg67 >= -81,3170 then annee = "1982" (5,40 % of 833 examples)
-					arg28 >= -67,2090
-						arg38 < 402,8248
-							arg3 < -3,2178
-								arg1 < 40,2078 then annee = "1990" (6,70 % of 687 examples)
-								arg1 >= 40,2078 then annee = "1993" (6,06 % of 825 examples)
-							arg3 >= -3,2178
-								arg20 < 740,0948 then annee = "1993" (6,12 % of 980 examples)
-								arg20 >= 740,0948 then annee = "1993" (6,48 % of 216 examples)
-						arg38 >= 402,8248
-							arg29 < -141,5123 then annee = "2003" (26,28 % of 156 examples)
-							arg29 >= -141,5123
-								arg1 < 40,6244 then annee = "1993" (7,63 % of 799 examples)
-								arg1 >= 40,6244 then annee = "1997" (7,06 % of 864 examples)
-				arg1 >= 42,9750
-					arg16 < 1944,7151
-						arg3 < 14,1287
-							arg36 < 9,7611
-								arg8 < 4,7566 then annee = "2005" (10,71 % of 392 examples)
-								arg8 >= 4,7566 then annee = "2007" (12,50 % of 176 examples)
-							arg36 >= 9,7611
-								arg2 < 35,7674 then annee = "2007" (7,12 % of 1376 examples)
-								arg2 >= 35,7674 then annee = "1995" (5,57 % of 969 examples)
-						arg3 >= 14,1287
-							arg27 < -118,2337
-								arg78 < 77,8782 then annee = "1994" (6,84 % of 263 examples)
-								arg78 >= 77,8782 then annee = "1980" (6,13 % of 212 examples)
-							arg27 >= -118,2337
-								arg37 < -54,7071then annee = "2007" (9,57 % of 303 examples)
-								arg37 >= -54,7071then annee = "2005" (11,03 % of 263 examples)
-					arg16 >= 1944,7151
-						arg27 < -268,2495
-							arg3 < 10,6988
-								arg1 < 44,6110 then annee = "2007" (6,79 % of 840 examples)
-								arg1 >= 44,6110 then annee = "2006" (10,48 % of 735 examples)
-							arg3 >= 10,6988
-								arg57 < 139,4482 then annee = "2007" (6,85 % of 219 examples)
-								arg57 >= 139,4482 then annee = "2005" (6,99 % of 186 examples)
-						arg27 >= -268,2495
-							arg1 < 44,6828
-								arg88 < 3,0498 then annee = "2005" (12,43 % of 338 examples)
-								arg88 >= 3,0498 then annee = "2000" (10,89 % of 514 examples)
-							arg1 >= 44,6828
-								arg11 < -6,0140 than annee = "2006" (13,56 % of 236 examples)
-								arg11 >= -6,0140 then annee = "2005" (12,37 % of 469 examples)
-	arg14 >= 2251,2939 then annee = "2007" (7,45 % of 160222 examples)
-arg1 >= 45,7646 then annee = "2007" (10,04 % of 182896 examples)
+	arg1 < 45,7646
+		arg14 < 2251,2939
+			arg2 < 8,2722
+				arg3 < 15,1492
+					arg1 < 41,9633
+						arg2 < -21,2608 then annee = "2007" (5,98 % of 13991 examples)
+						arg2 >= -21,2608
+							arg3 < -13,8086
+								arg1 < 38,7360
+									arg73 < 38,5173 then annee = "1995" (6,37 % of 863 examples)
+									arg73 >= 38,5173 then annee = "1994" (6,66 % of 631 examples)
+								arg1 >= 38,7360
+									arg3 < -30,3840 then annee = "2003" (6,96 % of 877 examples)
+									arg3 >= -30,3840 then annee = "1994" (7,15 % of 979 examples)
+							arg3 >= -13,8086
+								arg1 < 39,1476
+									arg58 < 149,8707 then annee = "1992" (5,99 % of 1470 examples)
+									arg58 >= 149,8707 then annee = "1991" (5,80 % of 276 examples)
+								arg1 >= 39,1476
+									arg41 < -25,8479 then annee = "2007" (6,09 % of 673 examples)
+									arg41 >= -25,8479 then annee = "1994" (6,16 % of 1819 examples)
+					arg1 >= 41,9633 then annee = "2005" (7,94 % of 16643 examples)
+				arg3 >= 15,1492
+					arg2 < -56,0967
+						arg6 < -7,0235
+							arg1 < 36,1818
+								arg6 < -16,2736
+									arg15 < 1570,8312 then annee = "2004" (6,78 % of 428 examples)
+									arg15 >= 1570,8312 then annee = "2004" (8,55 % of 456 examples)
+								arg6 >= -16,2736
+									arg58 < 114,0092 then annee = "1997" (6,07 % of 412 examples)
+									arg58 >= 114,0092 then annee = "2001" (7,93 % of 290 examples)
+							arg1 >= 36,1818
+								arg13 < 30,7554
+									arg1 < 42,2382 then annee = "2008" (7,02 % of 841 examples)
+									arg1 >= 42,2382 then annee = "2004" (10,57 % of 492 examples)
+								arg13 >= 30,7554
+									arg39 < -136,3003 then annee = "2007" (8,81 % of 193 examples)
+									arg39 >= -136,3003 then annee = "2005" (10,96 % of 584 examples)
+						arg6 >= -7,0235
+							arg73 < -119,1107
+								arg88 < -3,8773
+									arg25 < -26,7942 then annee = "1991" (14,01 % of 414 examples)
+									arg25 >= -26,7942 then annee = "1994" (8,78 % of 296 examples)
+								arg88 >= -3,8773
+									arg6 < 9,9134 then annee = "1999" (5,14 % of 798 examples)
+									arg6 >= 9,9134 then annee = "1994" (7,87 % of 1054 examples)
+							arg73 >= -119,1107
+								arg13 < 17,9415
+									arg4 < 21,4417 then annee = "1993" (6,01 % of 715 examples)
+									arg4 >= 21,4417 then annee = "1987" (11,11 % of 324 examples)
+								arg13 >= 17,9415
+									arg39 < -90,4188 then annee = "2006" (4,86 % of 865 examples)
+									arg39 >= -90,4188 then annee = "1996" (5,68 % of 528 examples)
+					arg2 >= -56,0967
+						arg1 < 42,9984
+							arg7 < -13,5922
+								arg6 < 9,9318
+									arg6 < -7,5614 then annee = "2004" (5,43 % of 939 examples)
+									arg6 >= -7,5614 then annee = "1994" (3,87 % of 1602 examples)
+								arg6 >= 9,9318
+									arg2 < -22,1934 then annee = "1994" (9,39 % of 511 examples)
+									arg2 >= -22,1934 then annee = "1994" (7,47 % of 348 examples)
+							arg7 >= -13,5922
+								arg6 < -13,9275
+									arg2 < -15,9415 then annee = "2006" (5,85 % of 991 examples)
+									arg2 >= -15,9415 then annee = "1993" (5,63 % of 800 examples)
+								arg6 >= -13,9275
+									arg11 < -3,0378 then annee = "2005" (3,71 % of 1804 examples)
+									arg11 >= -3,0378 then annee = "1995" (3,82 % of 5210 examples)
+						arg1 >= 42,9984
+							arg57 < 1,2049
+								arg13 < 44,4267
+									arg24 < 174,9142 then annee = "2007" (7,41 % of 432 examples)
+									arg24 >= 174,9142 then annee = "2005" (7,10 % of 1704 examples)
+								arg13 >= 44,4267
+									arg84 < -0,9807 then annee = "2007" (10,00 % of 150 examples)
+									arg84 >= -0,9807 then annee = "2007" (10,24 % of 381 examples)
+							arg57 >= 1,2049
+								arg3 < 30,3995
+									arg2 < -9,6916 then annee = "2006" (6,88 % of 1468 examples)
+									arg2 >= -9,6916 then annee = "2005" (4,59 % of 1219 examples)
+								arg3 >= 30,3995
+									arg27 < 10,2168 then annee = "1995" (4,36 % of 1948 examples)
+									arg27 >= 10,2168 then annee = "2007" (5,66 % of 1431 examples)
+			arg2 >= 8,2722
+				arg20 < 515,0552
+					arg3 < 5,2399
+						arg1 < 42,6754
+							arg68 < 67,0230
+								arg71 < -46,0447
+									arg50 < 0,1242 then annee = "1994" (9,03 % of 432 examples)
+									arg50 >= 0,1242 then annee = "1991" (5,99 % of 668 examples)
+								arg71 >= -46,0447
+									arg67 < 4,1585 then annee = "1992" (8,60 % of 2035 examples)
+									arg67 >= 4,1585 then annee = "1991" (5,51 % of 1598 examples)
+							arg68 >= 67,0230
+								arg3 < -30,9072
+									arg58 < 7,9216 then annee = "1995" (10,34 % of 261 examples)
+									arg58 >= 7,9216 then annee = "1993" (8,26 % of 242 examples)
+								arg3 >= -30,9072
+									arg28 < -44,7302 then annee = "1988" (10,28 % of 846 examples)
+									arg28 >= -44,7302 then annee = "1991" (7,78 % of 720 examples)
+						arg1 >= 42,6754
+							arg2 < 39,8608
+								arg3 < -15,4552
+									arg4 < 12,4532 then annee = "2002" (6,10 % of 1344 examples)
+									arg4 >= 12,4532 then annee = "2009" (13,95 % of 172 examples)
+								arg3 >= -15,4552
+									arg79 < -30,8833 then annee = "1995" (6,42 % of 1448 examples)
+									arg79 >= -30,8833 then annee = "1994" (7,15 % of 1399 examples)
+							arg2 >= 39,8608
+								arg14 < 1114,8948
+									arg7 < 3,4561 then annee = "1992" (8,25 % of 957 examples)
+									arg7 >= 3,4561 then annee = "1993" (9,20 % of 337 examples)
+								arg14 >= 1114,8948
+									arg40 < -76,0213 then annee = "1997" (6,34 % of 631 examples)
+									arg40 >= -76,0213 then annee = "1994" (6,92 % of 1488 examples)
+					arg3 >= 5,2399
+						arg6 < -11,5875
+							arg27 < 178,8050
+								arg20 < 349,7025
+									arg8 < 3,3784 then annee = "1989" (8,58 % of 4989 examples)
+									arg8 >= 3,3784 then annee = "1991" (5,77 % of 1074 examples)
+								arg20 >= 349,7025
+									arg57 < -106,1064 then annee = "2009" (6,67 % of 210 examples)
+									arg57 >= -106,1064 then annee = "1991" (6,52 % of 1627 examples)
+							arg27 >= 178,8050
+								arg38 < 323,9733
+									arg3 < 24,1856 then annee = "1992" (7,55 % of 609 examples)
+									arg3 >= 24.1856 then annee = "1989" (5.02 % of 816 examples)
+								arg38 >= 323,9733
+									arg72 < -86,5690 then annee = "2007" (8,28 % of 314 examples)
+									arg72 >= -86,5690 then annee = "2005" (5,33 % of 563 examples)
+						arg6 >= -11,5875
+							arg11 < -1,4864
+								arg29 < 39,0344
+									arg73 < -31,7095 then annee = "1995" (4,17 % of 1749 examples)
+									arg73 >= -31,7095 then annee = "1989" (4,51 % of 1175 examples)
+								arg29 >= 39,0344
+									arg28 < 52,7130 then annee = "1991" (4,88 % of 1290 examples)
+									arg28 >= 52,7130 then annee = "1994" (5,97 % of 620 examples)
+							arg11 >= -1,4864
+								arg28 < -54,3374
+									arg73 < 20,7136 then annee = "1989" (4,43 % of 2030 examples)
+									arg73 >= 20,7136 then annee = "1987" (8,30 % of 1132 examples)
+								arg28 >= -54,3374
+									arg19 < 579,9233 then annee = "1991" (5,43 % of 3132 examples)
+									arg19 >= 579,9233 then annee = "1994" (6,38 % of 1629 examples)
+				arg20 >= 515,0552
+					arg1 < 42,9750
+						arg28 < -67,2090
+							arg3 < -12,6639
+								arg1 < 39,5892
+									arg46 < 11,2506 then annee = "1989" (8,61 % of 302 examples)
+									arg46 >= 11,2506 then annee = "1996" (6,81 % of 323 examples)
+								arg1 >= 39,5892
+									arg14 < 1746,2938 then annee = "2000" (6,25 % of 336 examples)
+									arg14 >= 1746,2938 then annee = "2005" (7,14 % of 504 examples)
+							arg3 >= -12,6639
+								arg71 < 23,5112
+									arg58 < -29,6617 then annee = "1998" (5,17 % of 232 examples)
+									arg58 >= -29,6617 then annee = "2003" (5,90 % of 458 examples)
+								arg71 >= 23,5112
+									arg67 < -81,3170 then annee = "1988" (10,40 % of 202 examples)
+									arg67 >= -81,3170 then annee = "1982" (5,40 % of 833 examples)
+						arg28 >= -67,2090
+							arg38 < 402,8248
+								arg3 < -3,2178
+									arg1 < 40,2078 then annee = "1990" (6,70 % of 687 examples)
+									arg1 >= 40,2078 then annee = "1993" (6,06 % of 825 examples)
+								arg3 >= -3,2178
+									arg20 < 740,0948 then annee = "1993" (6,12 % of 980 examples)
+									arg20 >= 740,0948 then annee = "1993" (6,48 % of 216 examples)
+							arg38 >= 402,8248
+								arg29 < -141,5123 then annee = "2003" (26,28 % of 156 examples)
+								arg29 >= -141,5123
+									arg1 < 40,6244 then annee = "1993" (7,63 % of 799 examples)
+									arg1 >= 40,6244 then annee = "1997" (7,06 % of 864 examples)
+					arg1 >= 42,9750
+						arg16 < 1944,7151
+							arg3 < 14,1287
+								arg36 < 9,7611
+									arg8 < 4,7566 then annee = "2005" (10,71 % of 392 examples)
+									arg8 >= 4,7566 then annee = "2007" (12,50 % of 176 examples)
+								arg36 >= 9,7611
+									arg2 < 35,7674 then annee = "2007" (7,12 % of 1376 examples)
+									arg2 >= 35,7674 then annee = "1995" (5,57 % of 969 examples)
+							arg3 >= 14,1287
+								arg27 < -118,2337
+									arg78 < 77,8782 then annee = "1994" (6,84 % of 263 examples)
+									arg78 >= 77,8782 then annee = "1980" (6,13 % of 212 examples)
+								arg27 >= -118,2337
+									arg37 < -54,7071 then annee = "2007" (9,57 % of 303 examples)
+									arg37 >= -54,7071 then annee = "2005" (11,03 % of 263 examples)
+						arg16 >= 1944,7151
+							arg27 < -268,2495
+								arg3 < 10,6988
+									arg1 < 44,6110 then annee = "2007" (6,79 % of 840 examples)
+									arg1 >= 44,6110 then annee = "2006" (10,48 % of 735 examples)
+								arg3 >= 10,6988
+									arg57 < 139,4482 then annee = "2007" (6,85 % of 219 examples)
+									arg57 >= 139,4482 then annee = "2005" (6,99 % of 186 examples)
+							arg27 >= -268,2495
+								arg1 < 44,6828
+									arg88 < 3,0498 then annee = "2005" (12,43 % of 338 examples)
+									arg88 >= 3,0498 then annee = "2000" (10,89 % of 514 examples)
+								arg1 >= 44,6828
+									arg11 < -6,0140 then annee = "2006" (13,56 % of 236 examples)
+									arg11 >= -6,0140 then annee = "2005" (12,37 % of 469 examples)
+		arg14 >= 2251,2939 then annee = "2007" (7,45 % of 160222 examples)
+	arg1 >= 45,7646 then annee = "2007" (10,04 % of 182896 examples)

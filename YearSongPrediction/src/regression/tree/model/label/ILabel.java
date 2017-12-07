@@ -8,4 +8,6 @@ public interface ILabel {
 	 * @return The type of Label
 	 */
 	public LabelEnum getLabelTypeID();
+
+	public String toPrettyString();
 }

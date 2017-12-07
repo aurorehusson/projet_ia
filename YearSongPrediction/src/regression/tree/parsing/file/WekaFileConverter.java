@@ -2,14 +2,11 @@ package regression.tree.parsing.file;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Collection;
 
-public class WekaFileConverter extends TanagraFileConverter {
+public class WekaFileConverter extends FileConverter implements IFileConverter {
 
-	public WekaFileConverter(String fileNameToConvert, String convertedFileName, Collection<String> initialChar,
-			Collection<String> remplacementChar) {
-		super(fileNameToConvert, convertedFileName, initialChar, remplacementChar);
+	public WekaFileConverter(String fileNameToConvert, String convertedFileName) {
+		super(fileNameToConvert, convertedFileName);
 	}
 	
 	@Override
@@ -50,9 +47,7 @@ public class WekaFileConverter extends TanagraFileConverter {
 	}
 
 	public static void main(String[] args) {
-		Collection<String> oldChars = new ArrayList<>();
-		Collection<String> newChars = new ArrayList<>();
-		WekaFileConverter fileConverteur = new WekaFileConverter("/home/aurore/Bureau/YearPredictionMSD.txt","/home/aurore/Bureau/YearPredictionWeka",oldChars,newChars);
+		WekaFileConverter fileConverteur = new WekaFileConverter("/home/aurore/Bureau/YearPredictionMSD.txt","/home/aurore/Bureau/YearPredictionWeka");
 		try {
 			fileConverteur.executeRewriting();
 		} catch (IOException e) {

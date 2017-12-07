@@ -20,6 +20,10 @@ public class RegressionTreeModel {
 	public void setRoot(Node root) {
 		this.root = root;
 	}
+
+	public String toPrettyString() {
+		return getRoot().toPrettyString().toString();
+	}
 	
 
 	 

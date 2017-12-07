@@ -3,7 +3,7 @@ package regression.tree.controller;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -11,7 +11,7 @@ import regression.tree.controller.exception.BuildException;
 import regression.tree.controller.exception.InvalidParsingException;
 import regression.tree.model.Node;
 import regression.tree.model.RegressionTreeModel;
-import regression.tree.model.label.Rule;
+import regression.tree.model.label.Category;
 
 public class TreeBuilder {
 	
@@ -36,16 +36,18 @@ public class TreeBuilder {
 		String[] lines = treeString.split(System.lineSeparator());
 		ArrayList<Node> lastNodeUsedAtDeepN = new ArrayList<>();
 		
-		NodeAnalyser root = stringToNodeAnalyser(lines[0]);
+		//NodeAnalyser root = stringToNodeAnalyser(lines[0]);
+		Node root = new Node(new Category("ROOT"));
 		lastNodeUsedAtDeepN.add(0, root);
 		regressionTreeModel.setRoot(root);
 		
-		for (int i = 1; i < lines.length; i++) {
+		for (int i = 0; i < lines.length; i++) {
 			NodeAnalyser node = stringToNodeAnalyser(lines[i]);
 			lastNodeUsedAtDeepN.add(node.getDeepth(), node);
 			if (lastNodeUsedAtDeepN.get(node.getDeepth()-1) == null) {
 				throw new BuildException("There is a misstake in the description file of the tree! The build is canceled");
 			}
+			lastNodeUsedAtDeepN.get(node.getDeepth()-1).addChild(node);
 		}
 		return regressionTreeModel;
 	}
@@ -54,15 +56,18 @@ public class TreeBuilder {
 		return new NodeAnalyser(line);
 	}
 	
-	public static final RegressionTreeModel buildTanagraID3Tree() throws FileNotFoundException {
-		RegressionTreeModel tree = new RegressionTreeModel();
-		InputStream ips = new FileInputStream("treedata\\tanagra\\donnes_train_tanagra_ID3.txt");
-		InputStreamReader ipsr = new InputStreamReader(ips);
-		BufferedReader br = new BufferedReader(ipsr);
-		 
-		
-		
-		return tree;
+	public static final RegressionTreeModel buildTanagraID3Tree() throws FileNotFoundException, BuildException, InvalidParsingException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/tanagra/donnees_train_tanagra_ID3.txt")));
+		StringBuilder fileContains = new StringBuilder();
+		String line = "";
+		try {
+			while ((line = br.readLine())!=null) {
+				fileContains.append(line + System.lineSeparator());
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return buildTreeFromString(fileContains.toString());
 	}
 
 }
