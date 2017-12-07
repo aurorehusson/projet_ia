@@ -54,7 +54,7 @@ public abstract class AbstractYearsSongRegressionTreeID3 {
 			gaps.add(gap);
 		}
 		fichierSortie.println();
-		Double double1 = new Double(sum/i);
+		Double double1 = new Double(sum)/new Double(i);
 		fichierSortie.println("Mean Gap : " + double1);
 		fichierSortie.println("Percentage of True Positive : " + accuracy/i);
 		System.out.println("Mean Gap : " + double1);
