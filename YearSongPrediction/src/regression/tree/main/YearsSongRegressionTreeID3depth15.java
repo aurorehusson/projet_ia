@@ -25,7 +25,7 @@ public class YearsSongRegressionTreeID3depth15 extends AbstractYearsSongRegressi
 			System.out.println(buildTanagraID3Tree.toPrettyString());
 			TreeTraveller treeTraveller = new TreeTraveller(buildTanagraID3Tree);
 			//testingOnOneExample(treeTraveller);
-			playAllExamplesOnTree(treeTraveller, "YearPredictionMSDNew_test", "results/results_ID3_depth15");	
+			playAllExamplesOnTree(treeTraveller, "YearPredictionMSDNew_test", "results/tanagra/results_ID3_depth15");	
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

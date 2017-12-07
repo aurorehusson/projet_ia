@@ -33,7 +33,7 @@ public class TestingExample {
 	}
 	
 	public Double getArgument(Integer index) {
-		return this.arguments.get(index);
+		return this.arguments.get(index-1);
 	}
 
 	

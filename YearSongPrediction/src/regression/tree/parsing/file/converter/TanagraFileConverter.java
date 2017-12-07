@@ -10,7 +10,7 @@ import java.util.Iterator;
  * @author jordan
  *
  */
-public class TanagraFileConverter extends FileConverter implements IFileConverter {
+public class TanagraFileConverter extends DataFileConverter implements IFileConverter {
 	
 	private Collection<String> initialChar;
 	private Collection<String> remplacementChar;

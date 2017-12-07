@@ -58,20 +58,23 @@ public class TreeBuilder {
 	
 	public static final RegressionTreeModel buildTanagraID3TreeDepth10() throws FileNotFoundException, BuildException, InvalidParsingException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/tanagra/donnees_train_tanagra_ID3_depth10.txt")));
-		StringBuilder fileContains = new StringBuilder();
-		String line = "";
-		try {
-			while ((line = br.readLine())!=null) {
-				fileContains.append(line + System.lineSeparator());
-			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		StringBuilder fileContains = buildStringFromBuffer(br);
 		return buildTreeFromString(fileContains.toString());
 	}
 	
 	public static final RegressionTreeModel buildTanagraID3TreeDepth15() throws FileNotFoundException, BuildException, InvalidParsingException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/tanagra/donnees_train_tanagra_ID3_depth15.txt")));
+		StringBuilder fileContains = buildStringFromBuffer(br);
+		return buildTreeFromString(fileContains.toString());
+	}
+	
+	public static final RegressionTreeModel buildWekaJ48Tree() throws FileNotFoundException, BuildException, InvalidParsingException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("treedata/weka/donnees_train_weka_j48_treeOnly_converted.txt")));
+		StringBuilder fileContains = buildStringFromBuffer(br);
+		return buildTreeFromString(fileContains.toString());
+	}
+
+	private static StringBuilder buildStringFromBuffer(BufferedReader br) {
 		StringBuilder fileContains = new StringBuilder();
 		String line = "";
 		try {
@@ -81,7 +84,7 @@ public class TreeBuilder {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return buildTreeFromString(fileContains.toString());
+		return fileContains;
 	}
 
 }

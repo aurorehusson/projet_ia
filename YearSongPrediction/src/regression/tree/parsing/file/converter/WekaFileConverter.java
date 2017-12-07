@@ -3,7 +3,7 @@ package regression.tree.parsing.file.converter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class WekaFileConverter extends FileConverter implements IFileConverter {
+public class WekaFileConverter extends DataFileConverter implements IFileConverter {
 
 	public WekaFileConverter(String fileNameToConvert, String convertedFileName) {
 		super(fileNameToConvert, convertedFileName);
