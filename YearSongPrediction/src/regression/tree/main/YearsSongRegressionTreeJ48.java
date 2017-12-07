@@ -25,7 +25,7 @@ public class YearsSongRegressionTreeJ48 extends AbstractYearsSongRegressionTreeI
 			System.out.println(buildTanagraID3Tree.toPrettyString());
 			TreeTraveller treeTraveller = new TreeTraveller(buildTanagraID3Tree);
 			//testingOnOneExample(treeTraveller);
-			playAllExamplesOnTree(treeTraveller, "YearPredictionMSDNew_test", "results/results_Weka_J48");	
+			playAllExamplesOnTree(treeTraveller, "YearPredictionMSDNew_test", "results/weka/results_Weka_J48");	
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
