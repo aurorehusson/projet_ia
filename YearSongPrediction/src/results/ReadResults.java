@@ -6,6 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ReadResults {
+	/**
+	 * 
+	 * 
+	 */
 	private String dataPath;
 	private String resultsPath;
 	ArrayList<ArrayList<Integer>> resultsTable; // [year, nb_true, nb_results_true, nb_results_false]
@@ -159,7 +163,7 @@ public class ReadResults {
 	
 	public static void main(String[] args) throws IOException {
 		//ReadResults results = new ReadResults("/media/aurore/USB/TP/YearPredictionMSD.txt","/media/aurore/USB/TP/YearPredictionMSD - Copie.txt");
-		ReadResults results = new ReadResults("/home/aurore/Bureau/data.txt","/home/aurore/Bureau/results.txt");
+		ReadResults results = new ReadResults("YearPredictionMSDNew_test","results/weka/results_Weka_j48");
 		results.analyseResults();
 		System.out.println("accuracy : "+results.accuracy());
 		System.out.println("recall : "+results.recall());

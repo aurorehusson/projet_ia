@@ -47,7 +47,7 @@ public class WekaFileConverter extends DataFileConverter implements IFileConvert
 	}
 
 	public static void main(String[] args) {
-		WekaFileConverter fileConverteur = new WekaFileConverter("/home/aurore/Bureau/YearPredictionMSD.txt","/home/aurore/Bureau/YearPredictionWeka");
+		WekaFileConverter fileConverteur = new WekaFileConverter("YearPredictionMSD.txt","YearPredictionWeka");
 		try {
 			fileConverteur.executeRewriting();
 		} catch (IOException e) {
